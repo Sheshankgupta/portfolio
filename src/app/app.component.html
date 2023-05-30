@@ -1,0 +1,22 @@
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <a routerLink="/" class="rmvLinkStyle">
+        <ion-title translate="no">
+          Sheshank Gupta
+        </ion-title>
+      </a>
+      <ion-buttons slot="end">
+        <a routerLink="/info" class="rmvLinkStyle"><ion-button>About</ion-button></a>
+        <ion-button (click)="toggleDark()" expand="full">
+          <span *ngIf="dark; else light"><ion-icon name="sunny-outline"></ion-icon></span>
+          <ng-template #light> <ion-icon name="moon-outline"></ion-icon> </ng-template>
+        </ion-button>
+        <ion-button>
+          <div id="google_translate_element"></div>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>

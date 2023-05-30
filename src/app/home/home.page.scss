@@ -1,0 +1,185 @@
+.img {
+  padding: 40px;
+}
+
+@mixin magic-border($width, $color, $duration, $direction) {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: calc(100% + #{$width * 2});
+    height: calc(100% + #{$width * 2});
+    top: calc(#{$width}/ -1);
+    left: calc(#{$width}/ -1);
+    background: linear-gradient(to right, $color 0%, $color 100%),
+      linear-gradient(to top, $color 50%, transparent 50%),
+      linear-gradient(to top, $color 50%, transparent 50%),
+      linear-gradient(to right, $color 0%, $color 100%),
+      linear-gradient(to left, $color 0%, $color 100%);
+    background-size: 100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
+    background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+    background-repeat: no-repeat, no-repeat;
+    transition: transform $duration ease-in-out,
+      background-position $duration ease-in-out,
+      background-size $duration ease-in-out;
+    transform: scaleX(0) rotate(180deg * $direction);
+    transition-delay: $duration * 2, $duration, 0s;
+  }
+
+  &:hover {
+    &:before {
+      background-size: 200% $width, $width 400%, $width 400%, 55% $width,
+        55% $width;
+      background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+      transform: scaleX(1) rotate(180deg * $direction);
+      transition-delay: 0s, $duration, $duration * 2;
+    }
+  }
+}
+
+.btn-sty {
+  @include magic-border(4px, var(--ion-custom-border), 0.2s, 1);
+}
+
+.bio {
+  padding: 20px;
+  border: 2px solid var(--ion-custom-border);
+  border-radius: 10px;
+  text-align: center;
+
+  h2>span {
+    padding-bottom: 10px;
+    padding-inline: 20px;
+    border-bottom: 1px solid var(--ion-custom-border);
+  }
+}
+
+// .work {
+//   margin-right: 10px;
+//   display: inline-block;
+//   width: 12vw;
+
+//   img {
+//     width: 4vw;
+//     margin-block: auto;
+//   }
+
+//   span {
+//     padding: 10px;
+//     font-size: 14px;
+//     border-radius: 8px;
+//     color: var(--ion-color-dark-contrast);
+//     background-color: var(--ion-custom-border);
+//     position: relative;
+//     top: 40px;
+//     opacity: 0;
+//     z-index: 10;
+//     transition: opacity 0.5s ease;
+//   }
+
+//
+// }
+
+// .works {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+// }
+
+// .work {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   margin-bottom: 20px;
+//   width: calc(100% / 6);
+//   max-width: 150px;
+//   height: 200px;
+// }
+
+// .work img {
+//   height: auto;
+//   vertical-align: middle;
+//   margin-bottom: 20px;
+// }
+
+// .work span {
+//   padding: 10px;
+//   font-size: 14px;
+//   border-radius: 8px;
+//   color: var(--ion-color-dark-contrast);
+//   background-color: var(--ion-custom-border);
+//   opacity: 0;
+//   transition: opacity 0.5s ease;
+// }
+
+// .work:hover span {
+//   opacity: 1;
+// }
+
+// /* Tablet view */
+// @media screen and (max-width: 991px) {
+//   .work {
+//     width: calc(100% / 3);
+//     /* Show up to 3 images per row */
+//   }
+// }
+
+// /* Mobile view */
+// @media screen and (max-width: 767px) {
+//   .work {
+//     width: 100%;
+//     /* Show 1 image per row */
+//   }
+// }
+
+
+.work {
+  padding: 20px;
+  display: inline-grid;
+  align-content: space-between;
+  text-align: center;
+  height: 150px;
+}
+
+.work img {
+  margin-inline: auto;
+  width: 40%;
+  height: 100px;
+  object-fit: contain;
+  object-position: center;
+}
+
+
+.work span {
+  margin-inline: auto;
+  width: max-content;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  color: var(--ion-color-dark-contrast);
+  background-color: var(--ion-custom-border);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.work:hover span {
+  opacity: 1;
+}
+
+/* Tablet view */
+@media screen and (max-width: 991px) {
+  .work {
+    width: calc(100% / 3);
+    /* Show up to 3 images per row */
+  }
+}
+
+/* Mobile view */
+@media screen and (max-width: 767px) {
+  .work {
+    width: 100%;
+    /* Show 1 image per row */
+  }
+}
