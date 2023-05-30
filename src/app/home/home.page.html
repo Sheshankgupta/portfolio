@@ -1,17 +1,14 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" #content>
   <div class="nav-space"></div>
   <div class="container">
-    <div class="row">
+    <div class="row align-items-center">
       <div class="col-sm-5 my-auto">
         <div class="img"
           [ngStyle]="dark ? {'box-shadow': '0 0 20px 20px #131313 inset', 'background-image': 'url(\'../../../assets/images/dark.avif\')'}:{'box-shadow': '0 0 20px 20px white inset', 'background-image': 'url(\'../../../assets/images/light.avif\')'}">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus esse porro tempore soluta ut
-          dignissimos sint deserunt exercitationem in? Eum quibusdam ex deserunt, laboriosam quae labore ullam et nobis
-          magnam quos rem placeat reiciendis cumque magni, officiis quaerat eveniet quod eaque incidunt saepe ipsum
-          assumenda blanditiis.
+          <img src="../../assets/images/sheshank_gupta.jpg" alt="Sheshank Gupta">
         </div>
       </div>
-      <div class="col-sm-6 p-5 ms-5">
+      <div class="col-sm-6 p-5 about">
         <h3>Hello!</h3>
         <h2>I'm Sheshank Gupta</h2>
         <h4>
@@ -86,7 +83,7 @@
   <div class="container">
     <div class="bio">
       <div class="bio-head my-4">
-        <h2><span>I'm working on</span></h2>
+        <h2><span class="border-head">I'm working on</span></h2>
       </div>
       <div class="bio-content mb-4">
         Thinking out of the box is what I believe in doing. I believe learning is a process that never stops, even
@@ -134,5 +131,124 @@
       </div>
       <div class="mt-4"></div>
     </div>
+    <div class="nav-space"></div>
+    <!-- ---------------------------carousel experience------------------------------ -->
+    <!-- <div class="container">
+      <h2 class="mb-4"><span class="border-head">Experiences</span></h2>
+      <div id="steps" class="mb-4">
+        <div (click)="selectStep(1)" [class.active]="activeStep === 0">Cybertron Technologies</div>
+        <div (click)="selectStep(2)" [class.active]="activeStep === 1">Softpro India</div>
+      </div>
+
+      <div class="article_container">
+        <article [ngClass]="articles[0].class" id="cybt" expand="block">
+          <h2>Web Developer</h2>
+          <p>Feb 2023 - Present</p>
+        </article>
+        <article [ngClass]="articles[1].class" id="sftpr" expand="block">
+          <h2>Apprenticeship Trainee</h2>
+          <p>In softpro india technologies, I was appointed as a trainee.</p>
+        </article>
+      </div>
+    </div> -->
+
+
+
+    <!-- <ion-modal #cybt trigger="cybt">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Cybertron Technologies</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="cybt.dismiss()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <p>You will be prompted when closing this modal.</p>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
+
+    <ion-modal #sftpr trigger="sftpr">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Softpro India Technologies</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="sftpr.dismiss()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <p>Feb-2023-Prese</p>
+        </ion-content>
+      </ng-template>
+    </ion-modal> -->
+    <!-- ------------------------------------------------------ -->
+    <div class="container">
+      <h2 class="mb-5"><span class="border-head">Experiences</span></h2>
+      <div class="row d-flex align-items-stretch ">
+        <div class="col-sm-2 text-end align-items-center">Feb 2023 - Present</div>
+        <div class="col-sm-1 d-flex flex-column align-items-center box-container">
+          <div class="line"></div>
+          <div class="box"></div>
+          <div class="line"></div>
+        </div>
+        <div class="col-sm-9 flex-column">
+          <h4>Cybertron Technologies, Mohali</h4>
+          <p>
+            In cybertron technologies, currently I'm working as a web developer.
+            I have been working here with PHP, laravel and angular also includes Git.
+            <br>
+            Within my working period I have experiences with variuos projects including front-end work, back-end work
+            and also API creation.
+          </p>
+          <hr>
+        </div>
+      </div>
+      <div class="row d-flex align-items-stretch ">
+        <div class="col-sm-2 text-end align-items-center">Aug 2022 - Jan 2023</div>
+        <div class="col-sm-1 d-flex flex-column align-items-center box-container">
+          <div class="line"></div>
+          <div class="box"></div>
+        </div>
+        <div class="col-sm-9 flex-column">
+          <h4>Softpro India Technologies, Lucknow</h4>
+          <p>
+            In softpro india, I had completed my training and apprenticeship program.
+            I had worked with HTML, CSS, VanillaJS, PHP, Java and Git/Gitbash.
+            <br>
+            Within my working period I have experiences with variuos projects including front-end work, back-end work
+            and also API creation.
+          </p>
+          <hr>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <button (click)="scrollToTop()" class="scrollToTop">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </button>
+  <div class="nav-space"></div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-text pb-5">
+        <span>
+          Sheshank <br> Gupta
+        </span>
+        <br><br>
+        <ion-buttons>
+          <ion-button>
+            About Me
+          </ion-button>
+          <ion-button>
+            Explore About Me
+          </ion-button>
+        </ion-buttons>
+      </div>
+    </div>
+  </footer>
 </ion-content>

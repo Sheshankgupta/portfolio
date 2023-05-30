@@ -7,14 +7,12 @@
         </ion-title>
       </a>
       <ion-buttons slot="end">
-        <a routerLink="/info" class="rmvLinkStyle"><ion-button>About</ion-button></a>
+        <a routerLink="/about" class="rmvLinkStyle"><ion-button>About</ion-button></a>
         <ion-button (click)="toggleDark()" expand="full">
           <span *ngIf="dark; else light"><ion-icon name="sunny-outline"></ion-icon></span>
           <ng-template #light> <ion-icon name="moon-outline"></ion-icon> </ng-template>
         </ion-button>
-        <ion-button>
-          <div id="google_translate_element"></div>
-        </ion-button>
+        <div id="google_translate_element"></div>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
