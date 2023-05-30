@@ -25,37 +25,46 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 @import url('/node_modules/bootstrap/dist/css/bootstrap.min.css');
+
 @font-face {
   font-family: futura;
   src: url('../src/assets/fonts/Futura.ttf');
 }
 
-*{
+* {
   font-family: futura !important
 }
-body{
+
+body {
   position: relative !important;
   top: 0px !important;
 }
 
-.rmvLinkStyle{
-  text-decoration: none;
-  color: inherit;
-}
-.rmvLinkStyle:hover{
-  color: inherit;
-}
-.nav-space{
+.nav-space {
   height: 4.5rem;
 }
-.mt-6{
+
+.mt-6 {
   margin-top: 1.5rem;
 }
-iframe.skiptranslate{
+
+iframe.skiptranslate {
   display: none;
 }
-.goog-te-combo{
+
+.goog-te-combo {
   border: none;
   background-color: transparent;
   outline: none;
 }
+
+
+// ion-content {
+//   --offset-bottom: auto !important;
+//   --overflow: hidden;
+//   overflow: auto;
+
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+// }

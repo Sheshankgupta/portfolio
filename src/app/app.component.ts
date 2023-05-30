@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, AfterViewInit {
           ul.removeChild(ul.lastChild);
         }
       }
-    }, 80);
+    }, 120);
   }
   ngOnInit() {
     this.theme.setPreviousTheme();

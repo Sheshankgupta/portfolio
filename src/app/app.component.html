@@ -1,13 +1,11 @@
 <ion-app>
   <ion-header [translucent]="true">
     <ion-toolbar>
-      <a routerLink="/" class="rmvLinkStyle">
-        <ion-title translate="no">
-          Sheshank Gupta
-        </ion-title>
-      </a>
+      <ion-title translate="no" routerLink="/" style="cursor: pointer;">
+        Sheshank Gupta
+      </ion-title>
       <ion-buttons slot="end">
-        <a routerLink="/about" class="rmvLinkStyle"><ion-button>About</ion-button></a>
+        <ion-button routerLink="/about">About</ion-button>
         <ion-button (click)="toggleDark()" expand="full">
           <span *ngIf="dark; else light"><ion-icon name="sunny-outline"></ion-icon></span>
           <ng-template #light> <ion-icon name="moon-outline"></ion-icon> </ng-template>
