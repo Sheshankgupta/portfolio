@@ -1,4 +1,91 @@
-<ion-content>
+<ion-content #content>
   <div class="nav-space"></div>
-  Hello
+  <div class="nav-space"></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-sm-7">
+        <h3>About me</h3>
+        <h2>I'm Sheshank Gupta 😀</h2>
+        <h4>
+          currently working for Cybertron Technologies
+          <br>
+          A Front-end Angular Developer
+          <br>
+          and a Back-end Laravel Developer
+          <br>
+          and a part-time story teller
+        </h4>
+      </div>
+      <div class="col-sm-3 d-flex">
+        <img src="assets/images/sheshank_gupta_2.jpg" alt="Sheshank Gupta" class="img-top">
+        <div class="techs">
+          <p>TECHNOLOGIES&emsp;I'M</p>
+          <h1>WORKING ON</h1>
+          <hr>
+        </div>
+        <div class="domains my-auto" translate="no">
+          <div class="domain">
+            Angular
+          </div>
+          <div class="domain">
+            Ionic
+          </div>
+          <div class="domain">
+            Laravel
+          </div>
+          <div class="domain">
+            JavaScript
+          </div>
+          <div class="domain">
+            PHP
+          </div>
+          <div class="domain">
+            Git/Github
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <p>First of all, I would like to thank you for visiting and giving some of your precious time to get to know about
+      me.</p>
+
+    <p>Throughout my career till now, I have worked on various projects, ranging from small business websites to
+      large-scale web applications. I am proficient in modern frameworks like Angular and Ionic, and I have a good
+      understanding of responsive design principles to ensure optimal user experience across different devices. Apart
+      from front-end technologies, I also have a solid understanding of back-end technologies like PHP and Python. I
+      have developed many back-end solutions using Laravel and have sound knowledge of WordPress as well. Additionally,
+      I am familiar with relational databases and NoSQL databases. I have utilized Git/GitHub as a versioning tool for
+      my projects and have experience working with Jira software. Moreover, I have knowledge of VanillaJS, AJAX, and
+      jQuery.</p>
+
+    <p>What sets me apart is my passion for coding and attention to detail. I strive to write well-structured,
+      maintainable, and easily modifiable code, following best practices and industry standards. I am always eager to
+      learn and explore new technologies as I believe continuous learning is crucial in the ever-evolving field of web
+      development.</p>
+
+    <p>Outside of work, I enjoy attending tech conferences, participating in hackathons, and contributing to open-source
+      projects. These activities not only help me expand my knowledge but also allow me to connect with like-minded
+      professionals and give back to the developer community. In my leisure time, I enjoy playing chess, playing Clash
+      of Clans (a mobile game), meeting new people, traveling, and indulging in my passion for poetry and storytelling.
+    </p>
+    <br>
+    <br>
+    <p>Contact Me:
+      <ion-buttons>
+        <ion-button href="https://www.linkedin.com/in/sheshankgupta/" target="_blank"><ion-icon
+            name="logo-linkedin"></ion-icon></ion-button>
+        <ion-button href="https://github.com/Sheshankgupta" target="_blank"><ion-icon
+            name="logo-github"></ion-icon></ion-button>
+        <ion-button href="https://www.instagram.com/its._me_.anonymous/" target="_blank"><ion-icon
+            name="logo-instagram"></ion-icon></ion-button>
+        <ion-button href="mailto:sheshankgpt2174@gmail.com" target="_blank"><ion-icon
+            name="mail-open"></ion-icon></ion-button>
+      </ion-buttons>
+    </p>
+  </div>
+  <button (click)="scrollToTop()" class="scrollToTop">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </button>
+  <app-footer></app-footer>
 </ion-content>

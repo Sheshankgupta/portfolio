@@ -1,0 +1,47 @@
+.ion-padding {
+  display: none;
+}
+
+.side-menu {
+  display: none;
+}
+
+.side-menu ion-button {
+  --background: transparent;
+  --box-shadow: none;
+}
+
+ion-menu {
+  --width: 100px;
+  overflow-y: hidden;
+}
+
+ion-menu-button {
+  height: 50px;
+  width: max-content;
+  font-size: 20px;
+}
+
+.side-menu,
+.side-menu .menus-icons,
+.side-menu .theme {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  font-size: large;
+}
+
+.button-native {
+  --padding: 0 !important;
+}
+
+@media screen and (max-width: 820px) {
+  .fullNav {
+    display: none;
+  }
+
+  .ion-padding {
+    display: inherit;
+  }
+}

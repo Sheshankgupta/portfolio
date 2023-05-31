@@ -4,7 +4,7 @@
       <ion-title translate="no" routerLink="/" style="cursor: pointer;">
         Sheshank Gupta
       </ion-title>
-      <ion-buttons slot="end">
+      <ion-buttons slot="end" class="fullNav">
         <ion-button routerLink="/about">About</ion-button>
         <ion-button (click)="toggleDark()" expand="full">
           <span *ngIf="dark; else light"><ion-icon name="sunny-outline"></ion-icon></span>
@@ -12,7 +12,41 @@
         </ion-button>
         <div id="google_translate_element"></div>
       </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-menu-toggle class="ion-padding" id="main-content">
+          <ion-button><ion-icon name="menu-outline"></ion-icon></ion-button>
+        </ion-menu-toggle>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
   <ion-router-outlet></ion-router-outlet>
+
 </ion-app>
+
+<ion-menu [type]="menuType" content-id="main-content">
+  <ion-content class="ion-padding">
+    <ion-menu-toggle>
+      <div class="side-menu">
+        <ion-menu-button expand="full">
+          <ion-icon name="return-up-back-outline"></ion-icon>
+        </ion-menu-button>
+      </div>
+    </ion-menu-toggle>
+    <div class="side-menu">
+      <div class="menus-icons">
+        <ion-menu-button routerLink="/" expand="full">
+          Home
+        </ion-menu-button>
+        <ion-menu-button routerLink="/about" expand="full">
+          About
+        </ion-menu-button>
+      </div>
+      <div class="theme">
+        <ion-menu-button (click)="toggleDark()" expand="full">
+          <span *ngIf="dark;"><ion-icon name="sunny-outline"></ion-icon></span>
+          <span *ngIf="!dark;"> <ion-icon name="moon-outline"></ion-icon> </span>
+        </ion-menu-button>
+      </div>
+    </div>
+  </ion-content>
+</ion-menu>

@@ -3,11 +3,15 @@
 
 /** Ionic CSS Variables **/
 :root {
-
-  --ion-custom-footer1: #e7e7e77e;
-  --ion-custom-footer2: #d1d1d17e;
+  --ion-text-color: #272a2e;
+  --ion-custom-footer1: #c4c4c47e;
+  --ion-custom-footer2: #b6b6b67e;
   --ion-custom-border: #272727;
   --ion-custom-bullets: #686868;
+  --ion-back-rev: #121212;
+  --ion-background-color: #fffbf4;
+  --ion-border: #7e7e7e;
+
 
   /** primary **/
   --ion-color-primary: #3880ff;
@@ -82,10 +86,13 @@
   --ion-color-light-tint: #f5f6f9;
 
   .dark-theme {
+    --ion-text-color: #6e6862;
     --ion-custom-border: #d8d8d8;
     --ion-custom-footer1: #5555557e;
     --ion-custom-footer2: #7777777e;
     --ion-custom-bullets: #979797;
+    --ion-back-rev: #f0f0f0;
+    --ion-border: #7e7e7e;
 
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66, 140, 255;

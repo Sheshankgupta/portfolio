@@ -1,24 +1,26 @@
-import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { ThemeService } from './services/theme.service';
+
+declare global {
+  interface Window {
+    google: {
+      translate: {
+        TranslateElement: any;
+      };
+      googleTranslateElementInit: () => void;
+    };
+  }
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
   dark: boolean;
+  menuType: string = 'overlay';
   constructor(private theme: ThemeService) {}
-  ngAfterViewInit(): void {
-    window.setTimeout(() => {
-      const ul = document.querySelector('.goog-te-gadget');
-      if (ul) {
-        while (ul.childNodes.length > 1) {
-          ul.removeChild(ul.lastChild);
-        }
-      }
-    }, 120);
-  }
   ngOnInit() {
     this.theme.setPreviousTheme();
     if (localStorage.getItem('theme') == 'light') {
@@ -26,6 +28,23 @@ export class AppComponent implements OnInit, AfterViewInit {
     } else {
       this.dark = true;
     }
+
+    window.googleTranslateElementInit = () => {
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: 'en',
+          autoDisplay: 'true',
+          layout:
+            window.google.translate.TranslateElement.FloatPosition.TOP_LEFT,
+        },
+        'google_translate_element'
+      );
+    };
+
+    const script = document.createElement('script');
+    script.src =
+      '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(script);
   }
   toggleDark() {
     this.theme.toggleDark();
