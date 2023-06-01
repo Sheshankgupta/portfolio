@@ -13,7 +13,7 @@
     "lint": "ng lint",
     "build:android": "ionic capacitor build android",
     "build:ios": "ionic capacitor build ios",
-    "build:web":"npm i --legacy-peer-deps && ionic build --prod"
+    "build:web":"npm i --legacy-peer-deps && npm run build"
   },
   "private": true,
   "dependencies": {
