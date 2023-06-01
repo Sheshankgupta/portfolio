@@ -20,6 +20,7 @@ declare global {
 export class AppComponent implements OnInit {
   dark: boolean;
   menuType: string = 'overlay';
+  translateElement: HTMLDivElement;
   constructor(private theme: ThemeService) {}
   ngOnInit() {
     this.theme.setPreviousTheme();
@@ -28,17 +29,35 @@ export class AppComponent implements OnInit {
     } else {
       this.dark = true;
     }
-
-    window.googleTranslateElementInit = () => {
-      new window.google.translate.TranslateElement(
-        {
-          pageLanguage: 'en',
-          autoDisplay: 'true',
-          layout:
-            window.google.translate.TranslateElement.FloatPosition.TOP_LEFT,
-        },
-        'google_translate_element'
+    const menuButton = document.querySelector('ion-button#menuButton');
+    console.log();
+    if (menuButton) {
+      this.translateElement = menuButton.querySelector(
+        '#google_translate_element_wrapper'
       );
+    }
+    window.googleTranslateElementInit = () => {
+      if (this.translateElement && window.innerWidth <= 768) {
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            autoDisplay: 'true',
+            layout:
+              window.google.translate.TranslateElement.FloatPosition.TOP_LEFT,
+          },
+          this.translateElement
+        );
+      } else {
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            autoDisplay: 'true',
+            layout:
+              window.google.translate.TranslateElement.FloatPosition.TOP_LEFT,
+          },
+          'google_translate_element'
+        );
+      }
     };
 
     const script = document.createElement('script');
