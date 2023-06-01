@@ -6,6 +6,7 @@
       </ion-title>
       <ion-buttons slot="end" class="fullNav">
         <ion-button routerLink="/about">About</ion-button>
+        <ion-button routerLink="/hire-me">Hire Me</ion-button>
         <ion-button (click)="toggleDark()" expand="full">
           <span *ngIf="dark; else light"><ion-icon name="sunny-outline"></ion-icon></span>
           <ng-template #light> <ion-icon name="moon-outline"></ion-icon> </ng-template>
@@ -20,7 +21,6 @@
     </ion-toolbar>
   </ion-header>
   <ion-router-outlet></ion-router-outlet>
-
 </ion-app>
 
 <ion-menu [type]="menuType" content-id="main-content">
@@ -40,6 +40,7 @@
         <ion-menu-button routerLink="/about" expand="full">
           About
         </ion-menu-button>
+        <ion-menu-button routerLink="/hire-me" expand="full">Hire Me</ion-menu-button>
       </div>
       <div class="theme">
         <ion-menu-button (click)="toggleDark()" expand="full">

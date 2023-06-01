@@ -13,14 +13,14 @@ const routes: Routes = [
       import('./about/about.module').then((m) => m.AboutPageModule),
   },
   {
+    path: 'hire-me',
+    loadChildren: () =>
+      import('./hire-me/hire-me.module').then((m) => m.HireMePageModule),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  },
-  {
-    path: 'footer',
-    loadChildren: () =>
-      import('./footer/footer.module').then((m) => m.FooterPageModule),
   },
 ];
 
